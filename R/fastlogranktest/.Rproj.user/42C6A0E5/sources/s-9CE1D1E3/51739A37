@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580492270772.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "51739A37",
+    "lastKnownWriteTime" : 1573114411,
+    "last_content_update" : 1573114411,
+    "path" : "C:/Users/andre/fastlogranktest/R/fastlogranktest/man/multi_logrank_test.Rd",
+    "project_path" : "man/multi_logrank_test.Rd",
+    "properties" : {
+        "cursorPosition" : "35,35",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 13,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

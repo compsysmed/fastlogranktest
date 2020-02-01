@@ -1,0 +1,10 @@
+countoftests=20
+setsize=15
+lifelines.statistics: 0.49568629264831543s
+python: 0.002026796340942383s
+cython(selfgenerated): 0.0010323524475097656s
+cython(own cpp): 0.0s
+cython(multi cpp): 0.0029914379119873047s
+cpp: 0.020943164825439453s
+Write inputfile: 0.0009739398956298828s
+Whole time: 0.5315544605255127s

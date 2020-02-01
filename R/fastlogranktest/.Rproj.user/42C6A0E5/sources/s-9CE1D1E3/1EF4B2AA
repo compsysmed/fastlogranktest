@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580114984837.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "1EF4B2AA",
+    "lastKnownWriteTime" : 1572534287,
+    "last_content_update" : 1572534287,
+    "path" : "C:/Users/andre/fastlogranktest/R/fastlogranktest/tests/testthat/test-logrank_example.R",
+    "project_path" : "tests/testthat/test-logrank_example.R",
+    "properties" : {
+        "cursorPosition" : "6,2",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

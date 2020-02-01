@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580492294893.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2613071625",
+    "id" : "AB4C8BD9",
+    "lastKnownWriteTime" : 1580549003,
+    "last_content_update" : 1580549003,
+    "path" : "C:/Users/andre/fastlogranktest/R/fastlogranktest/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : true,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 14,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_namespace"
+}

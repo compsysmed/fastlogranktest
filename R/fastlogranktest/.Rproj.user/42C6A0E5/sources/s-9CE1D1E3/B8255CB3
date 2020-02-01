@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580550566010.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B8255CB3",
+    "lastKnownWriteTime" : 1580563515,
+    "last_content_update" : 1580563515,
+    "path" : "C:/Users/andre/fastlogranktest/R/fastlogranktest/.Rhistory",
+    "project_path" : ".Rhistory",
+    "properties" : {
+        "cursorPosition" : "512,0",
+        "scrollLine" : "433"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 16,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_history"
+}
