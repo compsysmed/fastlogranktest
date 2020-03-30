@@ -26,7 +26,7 @@ std::vector<std::pair<double, char>> cpugetpairvector(std::vector<double>& vect1
 	return target;
 }
 
-double logrank_instance(std::vector<double>& groupa, std::vector<char>& groupacensored, std::vector<double>& groupb, std::vector<char>& groupbcensored) {
+double logrank_instance(std::vector<double>& groupa, std::vector<char>& groupacensored, std::vector<double>& groupb, std::vector<char>& groupbcensored, bool teststatistic) {
 
 	std::vector<std::pair<double, char>> groupaboth = cpugetpairvector(groupa, groupacensored);
 	std::vector<std::pair<double, char>> groupbboth = cpugetpairvector(groupb, groupbcensored);
@@ -114,6 +114,9 @@ double logrank_instance(std::vector<double>& groupa, std::vector<char>& groupace
 		n = na + nb;
 	}
 	long double logrank = ((oa - ea) * (oa - ea)) / var;
+	if (teststatistic) {
+		return static_cast<double>(logrank);
+	}
 	double pvalue = 1.0;
 	if (logrank >= 0) {
 		pvalue = (1.0 - boost::math::cdf(boost::math::chi_squared(1), logrank));
@@ -122,15 +125,19 @@ double logrank_instance(std::vector<double>& groupa, std::vector<char>& groupace
 	return pvalue;
 }
 
-void startthread(unsigned long long start, unsigned long long end) {
+double logrank_instance(std::vector<double>& groupa, std::vector<char>& groupacensored, std::vector<double>& groupb, std::vector<char>& groupbcensored) {
+	return logrank_instance(groupa, groupacensored, groupb, groupbcensored, false);
+}
+
+void startthread(unsigned long long start, unsigned long long end, bool teststatistic) {
 	for (unsigned long long j = start; j < end; ++j) {
-		pvalues[j]=logrank_instance(groupas[j], groupacensoreds[j], groupbs[j], groupbcensoreds[j]);
+		pvalues[j] = logrank_instance(groupas[j], groupacensoreds[j], groupbs[j], groupbcensoreds[j], teststatistic);
 	}
 }
 
-std::vector<double> cpu_parallel_logrank(std::vector<std::vector<double>>& groupas_, std::vector<std::vector<char>>& groupacensoreds_, std::vector<std::vector<double>>& groupbs_, std::vector<std::vector<char>> &groupbcensoreds_, unsigned threadnumber) {
-		
-	std::cout << "Use " << threadnumber << " threads!" << std::endl;
+std::vector<double> cpu_parallel_logrank(std::vector<std::vector<double>>& groupas_, std::vector<std::vector<char>>& groupacensoreds_, std::vector<std::vector<double>>& groupbs_, std::vector<std::vector<char>>& groupbcensoreds_, unsigned threadnumber, bool teststatistic) {
+
+	//std::cout << "Use " << threadnumber << " threads!" << std::endl;
 	groupas = groupas_;
 	groupbs = groupbs_;
 	groupacensoreds = groupacensoreds_;
@@ -147,7 +154,7 @@ std::vector<double> cpu_parallel_logrank(std::vector<std::vector<double>>& group
 		if (end > totalsize) {
 			end = totalsize;
 		}
-		threads[j] = (std::thread(startthread, start, end));
+		threads[j] = (std::thread(startthread, start, end, teststatistic));
 		//threads[j]= std::thread(logrank_instance, groupas[j], groupacensoreds[j], groupbs[j], groupbcensoreds[j], j);
 		//logrank_instance(groupas[j], groupacensoreds[j], groupbs[j], groupbcensoreds[j], j);
 	}
@@ -159,6 +166,14 @@ std::vector<double> cpu_parallel_logrank(std::vector<std::vector<double>>& group
 	return pvalues;
 }
 
+std::vector<double> cpu_parallel_logrank(std::vector<std::vector<double>>& groupas, std::vector<std::vector<char>>& groupacensoreds, std::vector<std::vector<double>>& groupbs, std::vector<std::vector<char>>& groupbcensoreds, unsigned threadnumber) {
+	return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, threadnumber, false);
+}
+
+std::vector<double> cpu_parallel_logrank1(std::vector<std::vector<double>>& groupas, std::vector<std::vector<char>>& groupacensoreds, std::vector<std::vector<double>>& groupbs, std::vector<std::vector<char>>& groupbcensoreds, bool teststatistic) {
+	return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, std::thread::hardware_concurrency(), teststatistic);
+}
+
 std::vector<double> cpu_parallel_logrank(std::vector<std::vector<double>>& groupas, std::vector<std::vector<char>>& groupacensoreds, std::vector<std::vector<double>>& groupbs, std::vector<std::vector<char>>& groupbcensoreds) {
-	return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, std::thread::hardware_concurrency());
+	return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, std::thread::hardware_concurrency(), false);
 }

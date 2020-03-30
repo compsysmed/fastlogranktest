@@ -57,3 +57,8 @@ History
 ---------------------
 
 * Updated installation and author information.
+
+0.2.1 (2019-03-30)
+---------------------
+
+* Added capability to get test-statistic value instead of p-value

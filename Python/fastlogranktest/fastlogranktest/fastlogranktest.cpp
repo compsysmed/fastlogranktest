@@ -29,7 +29,7 @@ END: Cython Metadata */
 #else
 #define CYTHON_ABI "0_29_13"
 #define CYTHON_HEX_VERSION 0x001D0DF0
-#define CYTHON_FUTURE_DIVISION 0
+#define CYTHON_FUTURE_DIVISION 1
 #include <stddef.h>
 #ifndef offsetof
   #define offsetof(type, member) ( (size_t) & ((type*)0) -> member )
@@ -1119,6 +1119,8 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'libcpp.vector' */
 
+/* Module declarations from 'libcpp' */
+
 /* Module declarations from 'fastlogranktest.logrank_python' */
 
 /* Module declarations from 'fastlogranktest.fastlogranktest' */
@@ -1146,6 +1148,7 @@ static const char __pyx_k_groupbs[] = "groupbs";
 static const char __pyx_k_testvalues[] = "testvalues";
 static const char __pyx_k_logrank_test[] = "logrank_test";
 static const char __pyx_k_threadnumber[] = "threadnumber";
+static const char __pyx_k_teststatistic[] = "teststatistic";
 static const char __pyx_k_groupacensored[] = "groupacensored";
 static const char __pyx_k_groupbcensored[] = "groupbcensored";
 static const char __pyx_k_groupacensoreds[] = "groupacensoreds";
@@ -1173,9 +1176,10 @@ static PyObject *__pyx_n_s_multi_logrank_test;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_test;
+static PyObject *__pyx_n_u_teststatistic;
 static PyObject *__pyx_n_s_testvalues;
-static PyObject *__pyx_n_s_threadnumber;
-static PyObject *__pyx_pf_15fastlogranktest_15fastlogranktest_logrank_test(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_groupa, std::vector<double>  __pyx_v_groupb, std::vector<char>  __pyx_v_groupacensored, std::vector<char>  __pyx_v_groupbcensored); /* proto */
+static PyObject *__pyx_n_u_threadnumber;
+static PyObject *__pyx_pf_15fastlogranktest_15fastlogranktest_logrank_test(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_groupa, std::vector<double>  __pyx_v_groupb, std::vector<char>  __pyx_v_groupacensored, std::vector<char>  __pyx_v_groupbcensored, PyObject *__pyx_v_kwargs); /* proto */
 static PyObject *__pyx_pf_15fastlogranktest_15fastlogranktest_2multi_logrank_test(CYTHON_UNUSED PyObject *__pyx_self, std::vector<std::vector<double> >  __pyx_v_groupas, std::vector<std::vector<double> >  __pyx_v_groupbs, std::vector<std::vector<char> >  __pyx_v_groupacensoreds, std::vector<std::vector<char> >  __pyx_v_groupbcensoreds, PyObject *__pyx_v_kwargs); /* proto */
 static __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_get = {0, &__pyx_n_s_get, 0, 0, 0};
 static PyObject *__pyx_tuple_;
@@ -1184,12 +1188,12 @@ static PyObject *__pyx_codeobj__2;
 static PyObject *__pyx_codeobj__4;
 /* Late includes */
 
-/* "fastlogranktest/fastlogranktest.pyx":7
+/* "fastlogranktest/fastlogranktest.pyx":8
  * from libcpp.vector cimport vector
  * 
- * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored):             # <<<<<<<<<<<<<<
- *     return logrank_instance(groupa, groupacensored, groupb, groupbcensored)
- *     #return 1 - sp.chi2.cdf(logrank, df=1)
+ * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored, **kwargs):             # <<<<<<<<<<<<<<
+ *     if "teststatistic" in kwargs:
+ *         return logrank_instance(groupa, groupacensored, groupb, groupbcensored, kwargs.get("teststatistic"))
  */
 
 /* Python wrapper */
@@ -1200,9 +1204,12 @@ static PyObject *__pyx_pw_15fastlogranktest_15fastlogranktest_1logrank_test(PyOb
   std::vector<double>  __pyx_v_groupb;
   std::vector<char>  __pyx_v_groupacensored;
   std::vector<char>  __pyx_v_groupbcensored;
+  PyObject *__pyx_v_kwargs = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("logrank_test (wrapper)", 0);
+  __pyx_v_kwargs = PyDict_New(); if (unlikely(!__pyx_v_kwargs)) return NULL;
+  __Pyx_GOTREF(__pyx_v_kwargs);
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_groupa,&__pyx_n_s_groupb,&__pyx_n_s_groupacensored,&__pyx_n_s_groupbcensored,0};
     PyObject* values[4] = {0,0,0,0};
@@ -1230,23 +1237,23 @@ static PyObject *__pyx_pw_15fastlogranktest_15fastlogranktest_1logrank_test(PyOb
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_groupb)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("logrank_test", 1, 4, 4, 1); __PYX_ERR(0, 7, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("logrank_test", 1, 4, 4, 1); __PYX_ERR(0, 8, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_groupacensored)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("logrank_test", 1, 4, 4, 2); __PYX_ERR(0, 7, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("logrank_test", 1, 4, 4, 2); __PYX_ERR(0, 8, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_groupbcensored)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("logrank_test", 1, 4, 4, 3); __PYX_ERR(0, 7, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("logrank_test", 1, 4, 4, 3); __PYX_ERR(0, 8, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "logrank_test") < 0)) __PYX_ERR(0, 7, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, __pyx_v_kwargs, values, pos_args, "logrank_test") < 0)) __PYX_ERR(0, 8, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
       goto __pyx_L5_argtuple_error;
@@ -1256,57 +1263,102 @@ static PyObject *__pyx_pw_15fastlogranktest_15fastlogranktest_1logrank_test(PyOb
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
-    __pyx_v_groupa = __pyx_convert_vector_from_py_double(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L3_error)
-    __pyx_v_groupb = __pyx_convert_vector_from_py_double(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L3_error)
-    __pyx_v_groupacensored = __pyx_convert_vector_from_py_char(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L3_error)
-    __pyx_v_groupbcensored = __pyx_convert_vector_from_py_char(values[3]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L3_error)
+    __pyx_v_groupa = __pyx_convert_vector_from_py_double(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 8, __pyx_L3_error)
+    __pyx_v_groupb = __pyx_convert_vector_from_py_double(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 8, __pyx_L3_error)
+    __pyx_v_groupacensored = __pyx_convert_vector_from_py_char(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 8, __pyx_L3_error)
+    __pyx_v_groupbcensored = __pyx_convert_vector_from_py_char(values[3]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 8, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("logrank_test", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 7, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("logrank_test", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 8, __pyx_L3_error)
   __pyx_L3_error:;
+  __Pyx_DECREF(__pyx_v_kwargs); __pyx_v_kwargs = 0;
   __Pyx_AddTraceback("fastlogranktest.fastlogranktest.logrank_test", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_15fastlogranktest_15fastlogranktest_logrank_test(__pyx_self, __pyx_v_groupa, __pyx_v_groupb, __pyx_v_groupacensored, __pyx_v_groupbcensored);
+  __pyx_r = __pyx_pf_15fastlogranktest_15fastlogranktest_logrank_test(__pyx_self, __pyx_v_groupa, __pyx_v_groupb, __pyx_v_groupacensored, __pyx_v_groupbcensored, __pyx_v_kwargs);
 
   /* function exit code */
+  __Pyx_XDECREF(__pyx_v_kwargs);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_15fastlogranktest_15fastlogranktest_logrank_test(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_groupa, std::vector<double>  __pyx_v_groupb, std::vector<char>  __pyx_v_groupacensored, std::vector<char>  __pyx_v_groupbcensored) {
+static PyObject *__pyx_pf_15fastlogranktest_15fastlogranktest_logrank_test(CYTHON_UNUSED PyObject *__pyx_self, std::vector<double>  __pyx_v_groupa, std::vector<double>  __pyx_v_groupb, std::vector<char>  __pyx_v_groupacensored, std::vector<char>  __pyx_v_groupbcensored, PyObject *__pyx_v_kwargs) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_1;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  bool __pyx_t_4;
   __Pyx_RefNannySetupContext("logrank_test", 0);
 
-  /* "fastlogranktest/fastlogranktest.pyx":8
+  /* "fastlogranktest/fastlogranktest.pyx":9
  * 
- * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored):
- *     return logrank_instance(groupa, groupacensored, groupb, groupbcensored)             # <<<<<<<<<<<<<<
+ * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored, **kwargs):
+ *     if "teststatistic" in kwargs:             # <<<<<<<<<<<<<<
+ *         return logrank_instance(groupa, groupacensored, groupb, groupbcensored, kwargs.get("teststatistic"))
+ *     else:
+ */
+  __pyx_t_1 = (__Pyx_PyDict_ContainsTF(__pyx_n_u_teststatistic, __pyx_v_kwargs, Py_EQ)); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_2 = (__pyx_t_1 != 0);
+  if (__pyx_t_2) {
+
+    /* "fastlogranktest/fastlogranktest.pyx":10
+ * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored, **kwargs):
+ *     if "teststatistic" in kwargs:
+ *         return logrank_instance(groupa, groupacensored, groupb, groupbcensored, kwargs.get("teststatistic"))             # <<<<<<<<<<<<<<
+ *     else:
+ *         return logrank_instance(groupa, groupacensored, groupb, groupbcensored)
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_3 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_u_teststatistic, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 10, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = PyFloat_FromDouble(logrank_instance(__pyx_v_groupa, __pyx_v_groupacensored, __pyx_v_groupb, __pyx_v_groupbcensored, __pyx_t_4)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
+    goto __pyx_L0;
+
+    /* "fastlogranktest/fastlogranktest.pyx":9
+ * 
+ * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored, **kwargs):
+ *     if "teststatistic" in kwargs:             # <<<<<<<<<<<<<<
+ *         return logrank_instance(groupa, groupacensored, groupb, groupbcensored, kwargs.get("teststatistic"))
+ *     else:
+ */
+  }
+
+  /* "fastlogranktest/fastlogranktest.pyx":12
+ *         return logrank_instance(groupa, groupacensored, groupb, groupbcensored, kwargs.get("teststatistic"))
+ *     else:
+ *         return logrank_instance(groupa, groupacensored, groupb, groupbcensored)             # <<<<<<<<<<<<<<
  *     #return 1 - sp.chi2.cdf(logrank, df=1)
  * 
  */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(logrank_instance(__pyx_v_groupa, __pyx_v_groupacensored, __pyx_v_groupb, __pyx_v_groupbcensored)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
+  /*else*/ {
+    __Pyx_XDECREF(__pyx_r);
+    __pyx_t_3 = PyFloat_FromDouble(logrank_instance(__pyx_v_groupa, __pyx_v_groupacensored, __pyx_v_groupb, __pyx_v_groupbcensored)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 12, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
+    goto __pyx_L0;
+  }
 
-  /* "fastlogranktest/fastlogranktest.pyx":7
+  /* "fastlogranktest/fastlogranktest.pyx":8
  * from libcpp.vector cimport vector
  * 
- * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored):             # <<<<<<<<<<<<<<
- *     return logrank_instance(groupa, groupacensored, groupb, groupbcensored)
- *     #return 1 - sp.chi2.cdf(logrank, df=1)
+ * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored, **kwargs):             # <<<<<<<<<<<<<<
+ *     if "teststatistic" in kwargs:
+ *         return logrank_instance(groupa, groupacensored, groupb, groupbcensored, kwargs.get("teststatistic"))
  */
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_AddTraceback("fastlogranktest.fastlogranktest.logrank_test", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -1315,7 +1367,7 @@ static PyObject *__pyx_pf_15fastlogranktest_15fastlogranktest_logrank_test(CYTHO
   return __pyx_r;
 }
 
-/* "fastlogranktest/fastlogranktest.pyx":11
+/* "fastlogranktest/fastlogranktest.pyx":15
  *     #return 1 - sp.chi2.cdf(logrank, df=1)
  * 
  * def multi_logrank_test(vector[vector[double]] groupas, vector[vector[double]] groupbs, vector[vector[char]] groupacensoreds, vector[vector[char]] groupbcensoreds, **kwargs):             # <<<<<<<<<<<<<<
@@ -1364,23 +1416,23 @@ static PyObject *__pyx_pw_15fastlogranktest_15fastlogranktest_3multi_logrank_tes
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_groupbs)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("multi_logrank_test", 1, 4, 4, 1); __PYX_ERR(0, 11, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("multi_logrank_test", 1, 4, 4, 1); __PYX_ERR(0, 15, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_groupacensoreds)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("multi_logrank_test", 1, 4, 4, 2); __PYX_ERR(0, 11, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("multi_logrank_test", 1, 4, 4, 2); __PYX_ERR(0, 15, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_groupbcensoreds)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("multi_logrank_test", 1, 4, 4, 3); __PYX_ERR(0, 11, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("multi_logrank_test", 1, 4, 4, 3); __PYX_ERR(0, 15, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, __pyx_v_kwargs, values, pos_args, "multi_logrank_test") < 0)) __PYX_ERR(0, 11, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, __pyx_v_kwargs, values, pos_args, "multi_logrank_test") < 0)) __PYX_ERR(0, 15, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
       goto __pyx_L5_argtuple_error;
@@ -1390,14 +1442,14 @@ static PyObject *__pyx_pw_15fastlogranktest_15fastlogranktest_3multi_logrank_tes
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
-    __pyx_v_groupas = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
-    __pyx_v_groupbs = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
-    __pyx_v_groupacensoreds = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_char_3e___(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
-    __pyx_v_groupbcensoreds = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_char_3e___(values[3]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
+    __pyx_v_groupas = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
+    __pyx_v_groupbs = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_double_3e___(values[1]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
+    __pyx_v_groupacensoreds = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_char_3e___(values[2]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
+    __pyx_v_groupbcensoreds = __pyx_convert_vector_from_py_std_3a__3a_vector_3c_char_3e___(values[3]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("multi_logrank_test", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("multi_logrank_test", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 15, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_DECREF(__pyx_v_kwargs); __pyx_v_kwargs = 0;
   __Pyx_AddTraceback("fastlogranktest.fastlogranktest.multi_logrank_test", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -1419,63 +1471,148 @@ static PyObject *__pyx_pf_15fastlogranktest_15fastlogranktest_2multi_logrank_tes
   int __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   unsigned int __pyx_t_4;
+  bool __pyx_t_5;
   __Pyx_RefNannySetupContext("multi_logrank_test", 0);
 
-  /* "fastlogranktest/fastlogranktest.pyx":13
+  /* "fastlogranktest/fastlogranktest.pyx":17
  * def multi_logrank_test(vector[vector[double]] groupas, vector[vector[double]] groupbs, vector[vector[char]] groupacensoreds, vector[vector[char]] groupbcensoreds, **kwargs):
  *     cdef vector[double] testvalues
  *     if "threadnumber" in kwargs:             # <<<<<<<<<<<<<<
- *         return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"))
- *     else:
+ *         if "teststatistic" in kwargs:
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"), kwargs.get("teststatistic"))
  */
-  __pyx_t_1 = (__Pyx_PyDict_ContainsTF(__pyx_n_s_threadnumber, __pyx_v_kwargs, Py_EQ)); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_t_1 = (__Pyx_PyDict_ContainsTF(__pyx_n_u_threadnumber, __pyx_v_kwargs, Py_EQ)); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 17, __pyx_L1_error)
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "fastlogranktest/fastlogranktest.pyx":14
+    /* "fastlogranktest/fastlogranktest.pyx":18
  *     cdef vector[double] testvalues
  *     if "threadnumber" in kwargs:
- *         return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"))             # <<<<<<<<<<<<<<
- *     else:
- *         return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds)
+ *         if "teststatistic" in kwargs:             # <<<<<<<<<<<<<<
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"), kwargs.get("teststatistic"))
+ *         else:
  */
-    __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_threadnumber, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyInt_As_unsigned_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 14, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __pyx_convert_vector_to_py_double(cpu_parallel_logrank(__pyx_v_groupas, __pyx_v_groupacensoreds, __pyx_v_groupbs, __pyx_v_groupbcensoreds, __pyx_t_4)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_r = __pyx_t_3;
-    __pyx_t_3 = 0;
-    goto __pyx_L0;
+    __pyx_t_2 = (__Pyx_PyDict_ContainsTF(__pyx_n_u_teststatistic, __pyx_v_kwargs, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 18, __pyx_L1_error)
+    __pyx_t_1 = (__pyx_t_2 != 0);
+    if (__pyx_t_1) {
 
-    /* "fastlogranktest/fastlogranktest.pyx":13
+      /* "fastlogranktest/fastlogranktest.pyx":19
+ *     if "threadnumber" in kwargs:
+ *         if "teststatistic" in kwargs:
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"), kwargs.get("teststatistic"))             # <<<<<<<<<<<<<<
+ *         else:
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"), False)
+ */
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_3 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_u_threadnumber, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 19, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_4 = __Pyx_PyInt_As_unsigned_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_u_teststatistic, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 19, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_5 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __pyx_convert_vector_to_py_double(cpu_parallel_logrank(__pyx_v_groupas, __pyx_v_groupacensoreds, __pyx_v_groupbs, __pyx_v_groupbcensoreds, __pyx_t_4, __pyx_t_5)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 19, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_r = __pyx_t_3;
+      __pyx_t_3 = 0;
+      goto __pyx_L0;
+
+      /* "fastlogranktest/fastlogranktest.pyx":18
+ *     cdef vector[double] testvalues
+ *     if "threadnumber" in kwargs:
+ *         if "teststatistic" in kwargs:             # <<<<<<<<<<<<<<
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"), kwargs.get("teststatistic"))
+ *         else:
+ */
+    }
+
+    /* "fastlogranktest/fastlogranktest.pyx":21
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"), kwargs.get("teststatistic"))
+ *         else:
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"), False)             # <<<<<<<<<<<<<<
+ *     else:
+ *         if "teststatistic" in kwargs:
+ */
+    /*else*/ {
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_3 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_u_threadnumber, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_4 = __Pyx_PyInt_As_unsigned_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __pyx_convert_vector_to_py_double(cpu_parallel_logrank(__pyx_v_groupas, __pyx_v_groupacensoreds, __pyx_v_groupbs, __pyx_v_groupbcensoreds, __pyx_t_4, 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_r = __pyx_t_3;
+      __pyx_t_3 = 0;
+      goto __pyx_L0;
+    }
+
+    /* "fastlogranktest/fastlogranktest.pyx":17
  * def multi_logrank_test(vector[vector[double]] groupas, vector[vector[double]] groupbs, vector[vector[char]] groupacensoreds, vector[vector[char]] groupbcensoreds, **kwargs):
  *     cdef vector[double] testvalues
  *     if "threadnumber" in kwargs:             # <<<<<<<<<<<<<<
- *         return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"))
- *     else:
+ *         if "teststatistic" in kwargs:
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"), kwargs.get("teststatistic"))
  */
   }
 
-  /* "fastlogranktest/fastlogranktest.pyx":16
- *         return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"))
+  /* "fastlogranktest/fastlogranktest.pyx":23
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"), False)
  *     else:
- *         return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds)             # <<<<<<<<<<<<<<
+ *         if "teststatistic" in kwargs:             # <<<<<<<<<<<<<<
+ *             return cpu_parallel_logrank1(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("teststatistic"))
+ *         else:
+ */
+  /*else*/ {
+    __pyx_t_1 = (__Pyx_PyDict_ContainsTF(__pyx_n_u_teststatistic, __pyx_v_kwargs, Py_EQ)); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 23, __pyx_L1_error)
+    __pyx_t_2 = (__pyx_t_1 != 0);
+    if (__pyx_t_2) {
+
+      /* "fastlogranktest/fastlogranktest.pyx":24
+ *     else:
+ *         if "teststatistic" in kwargs:
+ *             return cpu_parallel_logrank1(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("teststatistic"))             # <<<<<<<<<<<<<<
+ *         else:
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds)
+ */
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_3 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_u_teststatistic, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_5 == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 24, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __pyx_convert_vector_to_py_double(cpu_parallel_logrank1(__pyx_v_groupas, __pyx_v_groupacensoreds, __pyx_v_groupbs, __pyx_v_groupbcensoreds, __pyx_t_5)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_r = __pyx_t_3;
+      __pyx_t_3 = 0;
+      goto __pyx_L0;
+
+      /* "fastlogranktest/fastlogranktest.pyx":23
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("threadnumber"), False)
+ *     else:
+ *         if "teststatistic" in kwargs:             # <<<<<<<<<<<<<<
+ *             return cpu_parallel_logrank1(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("teststatistic"))
+ *         else:
+ */
+    }
+
+    /* "fastlogranktest/fastlogranktest.pyx":26
+ *             return cpu_parallel_logrank1(groupas, groupacensoreds, groupbs, groupbcensoreds, kwargs.get("teststatistic"))
+ *         else:
+ *             return cpu_parallel_logrank(groupas, groupacensoreds, groupbs, groupbcensoreds)             # <<<<<<<<<<<<<<
  *     #cdef vector[double] pvalues
  *     #cdef unsigned long long i
  */
-  /*else*/ {
-    __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __pyx_convert_vector_to_py_double(cpu_parallel_logrank(__pyx_v_groupas, __pyx_v_groupacensoreds, __pyx_v_groupbs, __pyx_v_groupbcensoreds)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_r = __pyx_t_3;
-    __pyx_t_3 = 0;
-    goto __pyx_L0;
+    /*else*/ {
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_3 = __pyx_convert_vector_to_py_double(cpu_parallel_logrank(__pyx_v_groupas, __pyx_v_groupacensoreds, __pyx_v_groupbs, __pyx_v_groupbcensoreds)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_r = __pyx_t_3;
+      __pyx_t_3 = 0;
+      goto __pyx_L0;
+    }
   }
 
-  /* "fastlogranktest/fastlogranktest.pyx":11
+  /* "fastlogranktest/fastlogranktest.pyx":15
  *     #return 1 - sp.chi2.cdf(logrank, df=1)
  * 
  * def multi_logrank_test(vector[vector[double]] groupas, vector[vector[double]] groupbs, vector[vector[char]] groupacensoreds, vector[vector[char]] groupbcensoreds, **kwargs):             # <<<<<<<<<<<<<<
@@ -2073,8 +2210,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
+  {&__pyx_n_u_teststatistic, __pyx_k_teststatistic, sizeof(__pyx_k_teststatistic), 0, 1, 0, 1},
   {&__pyx_n_s_testvalues, __pyx_k_testvalues, sizeof(__pyx_k_testvalues), 0, 0, 1, 1},
-  {&__pyx_n_s_threadnumber, __pyx_k_threadnumber, sizeof(__pyx_k_threadnumber), 0, 0, 1, 1},
+  {&__pyx_n_u_threadnumber, __pyx_k_threadnumber, sizeof(__pyx_k_threadnumber), 0, 1, 0, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
@@ -2088,29 +2226,29 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "fastlogranktest/fastlogranktest.pyx":7
+  /* "fastlogranktest/fastlogranktest.pyx":8
  * from libcpp.vector cimport vector
  * 
- * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored):             # <<<<<<<<<<<<<<
- *     return logrank_instance(groupa, groupacensored, groupb, groupbcensored)
- *     #return 1 - sp.chi2.cdf(logrank, df=1)
+ * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored, **kwargs):             # <<<<<<<<<<<<<<
+ *     if "teststatistic" in kwargs:
+ *         return logrank_instance(groupa, groupacensored, groupb, groupbcensored, kwargs.get("teststatistic"))
  */
-  __pyx_tuple_ = PyTuple_Pack(4, __pyx_n_s_groupa, __pyx_n_s_groupb, __pyx_n_s_groupacensored, __pyx_n_s_groupbcensored); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(5, __pyx_n_s_groupa, __pyx_n_s_groupb, __pyx_n_s_groupacensored, __pyx_n_s_groupbcensored, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
-  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(4, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fastlogranktest_fastlogranktest, __pyx_n_s_logrank_test, 7, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(4, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fastlogranktest_fastlogranktest, __pyx_n_s_logrank_test, 8, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 8, __pyx_L1_error)
 
-  /* "fastlogranktest/fastlogranktest.pyx":11
+  /* "fastlogranktest/fastlogranktest.pyx":15
  *     #return 1 - sp.chi2.cdf(logrank, df=1)
  * 
  * def multi_logrank_test(vector[vector[double]] groupas, vector[vector[double]] groupbs, vector[vector[char]] groupacensoreds, vector[vector[char]] groupbcensoreds, **kwargs):             # <<<<<<<<<<<<<<
  *     cdef vector[double] testvalues
  *     if "threadnumber" in kwargs:
  */
-  __pyx_tuple__3 = PyTuple_Pack(6, __pyx_n_s_groupas, __pyx_n_s_groupbs, __pyx_n_s_groupacensoreds, __pyx_n_s_groupbcensoreds, __pyx_n_s_kwargs, __pyx_n_s_testvalues); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(6, __pyx_n_s_groupas, __pyx_n_s_groupbs, __pyx_n_s_groupacensoreds, __pyx_n_s_groupbcensoreds, __pyx_n_s_kwargs, __pyx_n_s_testvalues); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(4, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fastlogranktest_fastlogranktest, __pyx_n_s_multi_logrank_test, 11, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(4, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fastlogranktest_fastlogranktest, __pyx_n_s_multi_logrank_test, 15, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -2387,34 +2525,34 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "fastlogranktest/fastlogranktest.pyx":7
+  /* "fastlogranktest/fastlogranktest.pyx":8
  * from libcpp.vector cimport vector
  * 
- * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored):             # <<<<<<<<<<<<<<
- *     return logrank_instance(groupa, groupacensored, groupb, groupbcensored)
- *     #return 1 - sp.chi2.cdf(logrank, df=1)
+ * def logrank_test(vector[double] groupa, vector[double] groupb, vector[char] groupacensored, vector[char] groupbcensored, **kwargs):             # <<<<<<<<<<<<<<
+ *     if "teststatistic" in kwargs:
+ *         return logrank_instance(groupa, groupacensored, groupb, groupbcensored, kwargs.get("teststatistic"))
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_15fastlogranktest_15fastlogranktest_1logrank_test, NULL, __pyx_n_s_fastlogranktest_fastlogranktest_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_15fastlogranktest_15fastlogranktest_1logrank_test, NULL, __pyx_n_s_fastlogranktest_fastlogranktest_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_logrank_test, __pyx_t_1) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_logrank_test, __pyx_t_1) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fastlogranktest/fastlogranktest.pyx":11
+  /* "fastlogranktest/fastlogranktest.pyx":15
  *     #return 1 - sp.chi2.cdf(logrank, df=1)
  * 
  * def multi_logrank_test(vector[vector[double]] groupas, vector[vector[double]] groupbs, vector[vector[char]] groupacensoreds, vector[vector[char]] groupbcensoreds, **kwargs):             # <<<<<<<<<<<<<<
  *     cdef vector[double] testvalues
  *     if "threadnumber" in kwargs:
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_15fastlogranktest_15fastlogranktest_3multi_logrank_test, NULL, __pyx_n_s_fastlogranktest_fastlogranktest_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_15fastlogranktest_15fastlogranktest_3multi_logrank_test, NULL, __pyx_n_s_fastlogranktest_fastlogranktest_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_multi_logrank_test, __pyx_t_1) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_multi_logrank_test, __pyx_t_1) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "fastlogranktest/fastlogranktest.pyx":1
  * # distutils: language=c++             # <<<<<<<<<<<<<<
- * from logrank_python cimport logrank_instance
- * from logrank_python cimport cpu_parallel_logrank
+ * from .logrank_python cimport logrank_instance
+ * from .logrank_python cimport cpu_parallel_logrank
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

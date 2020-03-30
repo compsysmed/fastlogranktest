@@ -9,7 +9,6 @@ except ImportError:
 
 from distutils.extension import Extension
 from Cython.Build import cythonize
-
 import numpy
 
 
@@ -30,7 +29,7 @@ requirements = ['cython', 'numpy']
 
 setup(
     name='fastlogranktest',
-    version='0.2.0',
+    version='0.2.1',
     description="Perform the Log-Rank-Test very fast",
     long_description=readme + '\n\n' + history,
     author="Andreas Stelzer, Manuela Lautizi, Tim Kacprowski, Research group of computational systems medicine Chair of Experimental Bioinformatics TU Munich",
@@ -58,5 +57,5 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     test_suite='tests',
-    ext_modules=cythonize(extensions),
+    ext_modules=cythonize(extensions, language_level="3"),
 )
