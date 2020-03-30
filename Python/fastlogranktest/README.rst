@@ -37,6 +37,9 @@ list of censored information of group a's survival times
 groupbcensored:	
 list of censored information of group b's survival times
 
+teststatistic:
+(optional) if true, you get the test-statistic value instead of p-value
+
 Value
 --------
 p-value
@@ -62,6 +65,9 @@ list of lists of censored information of groupa's survival times
 
 groupbcensoreds:	
 list of lists of censored information of groupb's survival times
+
+teststatistic:
+(optional) if true, you get the test-statistic values instead of p-value
 
 threadnumber:	
 (optional) set the number of threads used for this function

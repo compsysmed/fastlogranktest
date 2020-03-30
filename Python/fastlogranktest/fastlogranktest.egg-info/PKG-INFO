@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: fastlogranktest
-Version: 0.2.0
+Version: 0.2.1
 Summary: Perform the Log-Rank-Test very fast
 Home-page: https://github.com/compsysmed/fastlogranktest.git
 Author: Andreas Stelzer, Manuela Lautizi, Tim Kacprowski, Research group of computational systems medicine Chair of Experimental Bioinformatics TU Munich
@@ -45,6 +45,9 @@ Description: ===============================
         groupbcensored:	
         list of censored information of group b's survival times
         
+        teststatistic:
+        (optional) if true, you get the test-statistic value instead of p-value
+        
         Value
         --------
         p-value
@@ -70,6 +73,9 @@ Description: ===============================
         
         groupbcensoreds:	
         list of lists of censored information of groupb's survival times
+        
+        teststatistic:
+        (optional) if true, you get the test-statistic values instead of p-value
         
         threadnumber:	
         (optional) set the number of threads used for this function
@@ -137,6 +143,11 @@ Description: ===============================
         ---------------------
         
         * Updated installation and author information.
+        
+        0.2.1 (2019-03-30)
+        ---------------------
+        
+        * Added capability to get test-statistic value instead of p-value
 Keywords: fastlogranktest
 Platform: UNKNOWN
 Classifier: Development Status :: 2 - Pre-Alpha
