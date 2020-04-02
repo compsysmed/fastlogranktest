@@ -29,12 +29,9 @@ vector of censored information of group a's survival times
 groupbcensored:
 vector of censored information of group b's survival times
 
-teststatistic:
-(optional) if true, you get the test-statistic value instead of p-value
-
 Value
 --------
-p-value
+vector of test statistic and p-value
 
 Description
 ------------
@@ -58,12 +55,9 @@ list of vectors of censored information of groupa's survival times
 groupbcensoreds:
 list of vectors of censored information of groupb's survival times
 
-teststatistic:
-(optional) if true, you get the test-statistic values instead of p-value
-
 threadnumber:
 (optional) set the number of threads used for this function
 
 Value
 --------
-vector of p-values (same order as input)
+list of vectors of test statistics and p-values (same order as input)
