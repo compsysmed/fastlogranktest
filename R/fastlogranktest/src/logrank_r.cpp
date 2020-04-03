@@ -1,5 +1,6 @@
 #include <Rcpp.h>
 // [[Rcpp::depends(BH)]]
+#include <cmath>
 #include <boost/math/distributions.hpp>
 #include <iostream>
 #include <vector>
@@ -117,12 +118,13 @@ std::vector<double> logrank_instance(std::vector<double>& groupa, std::vector<do
     n = na + nb;
   }
   long double logrank = ((oa - ea) * (oa - ea)) / var;
+  long double zstat = (oa-ea)/sqrt(var);
   double pvalue = 1.0;
   if (logrank >= 0) {
     pvalue = (1.0 - boost::math::cdf(boost::math::chi_squared(1), logrank));
     //std::cout << pvalue << std::endl;
   }
-  return std::vector<double>{static_cast<double>(logrank),pvalue};
+  return std::vector<double>{static_cast<double>(logrank),static_cast<double>(zstat),pvalue};
 }
 
 void startthread(unsigned long long start, unsigned long long end) {

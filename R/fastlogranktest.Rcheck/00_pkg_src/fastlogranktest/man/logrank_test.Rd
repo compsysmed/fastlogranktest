@@ -16,7 +16,7 @@ logrank_test(groupa, groupb, groupacensored, groupbcensored)
 \item{groupbcensored}{vector of censored information of group b's survival times}
 }
 \value{
-p-value
+chi2 statistic, z-statistic, p-value
 }
 \description{
 Calculate the Log-Rank-Test very fast
@@ -27,5 +27,5 @@ E1 <- c(1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0)
 T2 <- c(1, 1, 2, 2, 3, 4, 4, 5, 5, 8, 8, 8, 8, 11, 11, 12, 12, 15, 17, 22, 23)
 E2 <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 logrank_test(T1, T2, E1, E2)
-#1.679294e+01 4.168809e-05
+#1.679294e+01 -4.097919e+00, 4.168809e-05
 }

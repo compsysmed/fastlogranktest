@@ -16,4 +16,4 @@ LinkingTo: Rcpp, BH
 Imports: Rcpp
 Suggests: testthat (>= 2.1.0), survival (>= 3.1)
 NeedsCompilation: yes
-Packaged: 2020-04-02 12:26:59 UTC; tim
+Packaged: 2020-04-03 11:21:39 UTC; tim

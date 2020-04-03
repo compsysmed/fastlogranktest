@@ -21,14 +21,14 @@ Type 'q()' to quit R.
 > test_check("fastlogranktest")
 [1] ""
 [1] "normal time: "
-[1] 0.279
+[1] 0.26
 [1] "multiple time: "
-[1] 0.12688
+[1] 0.12276
 [1] "survdiff time: "
-[1] 8.953
+[1] 8.699
 ══ testthat results  ═══════════════════════════════════════════════════════════
 [ OK: 4 | SKIPPED: 0 | WARNINGS: 0 | FAILED: 0 ]
 > 
 > proc.time()
    user  system elapsed 
- 49.805   1.372  23.891 
+ 49.181   1.132  23.010 

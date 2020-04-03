@@ -7,5 +7,5 @@ test_that("multi_logrank works", {
   e1s<-list(E1, E1, E1)
   t2s<-list(T2, T2, T2)
   e2s<-list(E2, E2, E2)
-  expect_equal(multi_logrank_test(t1s,t2s,e1s,e2s), rep(list(c(1.679294e+01,4.168809e-05)),3), tolerance=1e-5)
+  expect_equal(multi_logrank_test(t1s,t2s,e1s,e2s), rep(list(c(1.679294e+01,-4.097919e+00,4.168809e-05)),3), tolerance=1e-5)
 })

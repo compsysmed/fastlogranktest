@@ -33,7 +33,7 @@ test_that("benchmarks", {
     print(time2/repititions)
     print("survdiff time: ")
     print(time3)
-    expect_equal(result1[2], pchisq(result3$chisq, length(result3$n)-1, lower.tail = FALSE), tolerance=1e-4)
+    expect_equal(result1[3], pchisq(result3$chisq, length(result3$n)-1, lower.tail = FALSE), tolerance=1e-4)
   }
   else{
     print("")
