@@ -9,7 +9,8 @@ multi_logrank_test(
   groupbs,
   groupacensoreds,
   groupbcensoreds,
-  threadnumber = NULL
+  threadnumber = NULL,
+  onlyz = FALSE
 )
 }
 \arguments{
@@ -22,6 +23,8 @@ multi_logrank_test(
 \item{groupbcensoreds}{list of vectors of censored information of groupb's survival times}
 
 \item{threadnumber}{(optional) set the number of threads used for this function}
+
+\item{onlyz}{(optional) calculate only z-statistic}
 }
 \value{
 vector of chi2 statistic, z-statistic, p-value (same order as input)

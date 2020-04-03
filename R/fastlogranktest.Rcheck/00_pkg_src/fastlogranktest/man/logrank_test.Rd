@@ -4,7 +4,7 @@
 \alias{logrank_test}
 \title{Calculate the Log-Rank-Test very fast}
 \usage{
-logrank_test(groupa, groupb, groupacensored, groupbcensored)
+logrank_test(groupa, groupb, groupacensored, groupbcensored, onlyz = FALSE)
 }
 \arguments{
 \item{groupa}{vector of group a's survival times}
@@ -14,6 +14,8 @@ logrank_test(groupa, groupb, groupacensored, groupbcensored)
 \item{groupacensored}{vector of censored information of group a's survival times}
 
 \item{groupbcensored}{vector of censored information of group b's survival times}
+
+\item{onlyz}{(optional) calculate only z-statistic}
 }
 \value{
 chi2 statistic, z-statistic, p-value

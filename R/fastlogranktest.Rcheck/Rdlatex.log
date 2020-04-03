@@ -81,7 +81,7 @@ ty)) (/usr/local/texlive/2019/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd) [1{/usr/local/te
 xlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 No file Rd2.ind.
-[3] (/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.aux)
+[3] (/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -95,7 +95,7 @@ xlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (3 pages, 70127 bytes).
+Output written on Rd2.pdf (3 pages, 70692 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -165,7 +165,7 @@ Package hyperref Warning: Option `pagebackref' has already been used,
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/base/makeidx.sty)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty)
 Writing index file Rd2.idx
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.aux)
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.aux)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1ptm.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -173,15 +173,15 @@ Writing index file Rd2.idx
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 (/usr/local/texlive/2019/texmf-dist/tex/latex/refcount/refcount.sty)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
-ty)) (/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.out)
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.out)
+ty)) (/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.out)
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.out)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd)
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.toc) [1{/usr/local/texlive/2019/texmf-va
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.toc) [1{/usr/local/texlive/2019/texmf-va
 r/fonts/map/pdftex/updmap/pdftex.map}] [2]
 No file Rd2.ind.
-[3] (/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.aux) ){/usr/local/texlive/2019/texmf
+[3] (/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.aux) ){/usr/local/texlive/2019/texmf
 -dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc
 /dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/
 public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2019/texmf-dist/fon
@@ -189,7 +189,7 @@ ts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
 1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (3 pages, 70466 bytes).
+Output written on Rd2.pdf (3 pages, 71029 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2019] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (2 entries accepted, 0 rejected).
@@ -265,7 +265,7 @@ Package hyperref Warning: Option `pagebackref' has already been used,
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/base/makeidx.sty)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty)
 Writing index file Rd2.idx
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.aux)
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.aux)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1ptm.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -273,15 +273,15 @@ Writing index file Rd2.idx
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 (/usr/local/texlive/2019/texmf-dist/tex/latex/refcount/refcount.sty)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
-ty)) (/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.out)
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.out)
+ty)) (/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.out)
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.out)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd)
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.toc) [1{/usr/local/texlive/2019/texmf-va
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.toc) [1{/usr/local/texlive/2019/texmf-va
 r/fonts/map/pdftex/updmap/pdftex.map}] [2]
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.ind [3] [4])
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.aux)
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.ind [3] [4])
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -295,7 +295,7 @@ xlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (4 pages, 70991 bytes).
+Output written on Rd2.pdf (4 pages, 71563 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2019] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (2 entries accepted, 0 rejected).
@@ -371,7 +371,7 @@ Package hyperref Warning: Option `pagebackref' has already been used,
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/base/makeidx.sty)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty)
 Writing index file Rd2.idx
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.aux)
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.aux)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1ptm.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -379,15 +379,15 @@ Writing index file Rd2.idx
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 (/usr/local/texlive/2019/texmf-dist/tex/latex/refcount/refcount.sty)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
-ty)) (/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.out)
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.out)
+ty)) (/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.out)
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.out)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd)
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.toc) [1{/usr/local/texlive/2019/texmf-va
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.toc) [1{/usr/local/texlive/2019/texmf-va
 r/fonts/map/pdftex/updmap/pdftex.map}] [2]
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.ind [3] [4])
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.aux) ){/usr/local/texlive/2019/texmf-dis
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.ind [3] [4])
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.aux) ){/usr/local/texlive/2019/texmf-dis
 t/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvi
 ps/inconsolata/i4-t1-0.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/publ
 ic/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
@@ -395,8 +395,8 @@ ype1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (4 pages, 71637 bytes).
+Output written on Rd2.pdf (4 pages, 72202 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘fastlogranktest-manual.pdf’ ...
 Done
-You may want to clean up by 'rm -Rf /tmp/RtmpI1TA2T/Rd2pdf86625cbd67f'
+You may want to clean up by 'rm -Rf /tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342'

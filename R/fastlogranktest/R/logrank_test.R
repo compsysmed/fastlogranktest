@@ -3,6 +3,7 @@
 #' @param groupb vector of group b's survival times
 #' @param groupacensored vector of censored information of group a's survival times
 #' @param groupbcensored vector of censored information of group b's survival times
+#' @param onlyz (optional) calculate only z-statistic
 #' @return chi2 statistic, z-statistic, p-value
 #' @examples
 #' T1 <- c(6, 6, 6, 6, 7, 9, 10, 10, 11, 13, 16, 17, 19, 20, 22, 23, 25, 32, 32, 34, 35)
@@ -14,8 +15,8 @@
 #' @export
 #' @import Rcpp
 #' @useDynLib fastlogranktest, .registration = TRUE
-logrank_test <- function(groupa, groupb, groupacensored, groupbcensored){
-    logrank_instance(groupa, groupb, groupacensored, groupbcensored)
+logrank_test <- function(groupa, groupb, groupacensored, groupbcensored, onlyz=FALSE){
+    logrank_instance(groupa, groupb, groupacensored, groupbcensored, onlyz)
 }
 #' Calculate multiple Log-Rank-Tests very fast
 #' @param groupas list of vectors of groupa's survival times
@@ -23,6 +24,7 @@ logrank_test <- function(groupa, groupb, groupacensored, groupbcensored){
 #' @param groupacensoreds list of vectors of censored information of groupa's survival times
 #' @param groupbcensoreds list of vectors of censored information of groupb's survival times
 #' @param threadnumber (optional) set the number of threads used for this function
+#' @param onlyz (optional) calculate only z-statistic
 #' @return vector of chi2 statistic, z-statistic, p-value (same order as input)
 #' @examples
 #' T1 <- c(6, 6, 6, 6, 7, 9, 10, 10, 11, 13, 16, 17, 19, 20, 22, 23, 25, 32, 32, 34, 35)
@@ -39,11 +41,11 @@ logrank_test <- function(groupa, groupb, groupacensored, groupbcensored){
 #' @export
 #' @import Rcpp
 #' @useDynLib fastlogranktest, .registration = TRUE
-multi_logrank_test <- function(groupas, groupbs, groupacensoreds, groupbcensoreds, threadnumber=NULL){
+multi_logrank_test <- function(groupas, groupbs, groupacensoreds, groupbcensoreds, threadnumber=NULL, onlyz=FALSE){
   if(is.null(threadnumber)){
-      cpu_parallel_logrank(groupas, groupbs, groupacensoreds, groupbcensoreds)
+      cpu_parallel_logrank(groupas, groupbs, groupacensoreds, groupbcensoreds, onlyz)
   }
   else{
-      cpu_parallel_logrank1(groupas, groupbs, groupacensoreds, groupbcensoreds, threadnumber)
+      cpu_parallel_logrank1(groupas, groupbs, groupacensoreds, groupbcensoreds, threadnumber, onlyz)
   }
 }

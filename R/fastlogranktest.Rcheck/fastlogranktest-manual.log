@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.4.2)  3 APR 2020 13:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.4.2)  3 APR 2020 14:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -420,7 +420,7 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 
 
 Writing index file Rd2.idx
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.aux)
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.aux)
 \openout1 = `Rd2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -482,8 +482,8 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
- (/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.out)
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.out)
+ (/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.out)
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.out)
 \@outlinefile=\write4
 \openout4 = `Rd2.out'.
 
@@ -519,7 +519,7 @@ LaTeX Font Info:    Trying to load font information for T1+phv on input line 35
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.toc)
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.toc)
 \tf@toc=\write5
 \openout5 = `Rd2.toc'.
 
@@ -528,21 +528,21 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 66.
+(Font)              scaled to size 9.0pt on input line 68.
  [2]
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.ind [3] [4
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.ind [3] [4
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 128.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
 
-(/tmp/RtmpI1TA2T/Rd2pdf86625cbd67f/Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 128.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 128.
+(/tmp/RtmpG3ABjQ/Rd2pdf1e6379bb342/Rd2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
 (rerunfilecheck)             Checksum: 18817DBD9CC01291E41281F31E5FEA14;183.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 128.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
  ) 
 Here is how much of TeX's memory you used:
  6452 strings out of 492162
@@ -551,7 +551,7 @@ Here is how much of TeX's memory you used:
  10645 multiletter control sequences out of 15000+600000
  38203 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 50i,5n,40p,228b,497s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,5n,40p,228b,548s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2019/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/local/texl
 ive/2019/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/l
@@ -560,7 +560,7 @@ xlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (4 pages, 71637 bytes).
+Output written on Rd2.pdf (4 pages, 72202 bytes).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
  75 compressed objects within 1 object stream

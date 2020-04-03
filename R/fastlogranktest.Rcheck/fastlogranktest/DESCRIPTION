@@ -16,5 +16,5 @@ LinkingTo: Rcpp, BH
 Imports: Rcpp
 Suggests: testthat (>= 2.1.0), survival (>= 3.1)
 NeedsCompilation: yes
-Packaged: 2020-04-03 11:21:39 UTC; tim
-Built: R 3.6.3; x86_64-pc-linux-gnu; 2020-04-03 11:22:22 UTC; unix
+Packaged: 2020-04-03 12:54:45 UTC; tim
+Built: R 3.6.3; x86_64-pc-linux-gnu; 2020-04-03 12:55:28 UTC; unix

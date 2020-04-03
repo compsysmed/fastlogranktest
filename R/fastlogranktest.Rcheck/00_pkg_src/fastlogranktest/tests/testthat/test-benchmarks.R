@@ -1,8 +1,8 @@
 test_that("benchmarks", {
   if (requireNamespace("survival", quietly = TRUE)) {
     library(fastlogranktest)
-    size<-1000000
-    repititions<-100
+    size<-100000
+    repititions<-1000
     maxvalue<-50
 
     T1 <- runif(size, 0.0, maxvalue)
